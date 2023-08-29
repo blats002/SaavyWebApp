@@ -15,5 +15,9 @@ task assembleServerAndClient(type: Copy, dependsOn: ['copyClientResources', ':se
 }
 //task(":server:assemble").mustRunAfter(copyClientResources) // <4>
 
+//task dbmGormDiff {
+//    dependsOn ':server:dbmGormDiff'
+//}
+
 
 

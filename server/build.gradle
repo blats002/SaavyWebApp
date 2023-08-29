@@ -8,6 +8,7 @@ buildscript {
         classpath "com.github.node-gradle:gradle-node-plugin:2.2.0"
         classpath "org.grails.plugins:hibernate5:7.3.0"
         classpath "org.grails.plugins:views-gradle:2.3.2"
+        classpath 'org.grails.plugins:database-migration:4.2.0'
     }
 }
 
@@ -58,11 +59,14 @@ dependencies {
     implementation "org.hibernate:hibernate-core:5.6.11.Final"
     implementation "org.grails.plugins:views-json"
     implementation "org.grails.plugins:views-json-templates"
+    implementation 'org.grails.plugins:database-migration:4.2.0'
+    implementation 'org.liquibase:liquibase-core:4.19.0'
     profile "org.grails.profiles:vue"
     runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
-    runtimeOnly "com.h2database:h2"
+//    runtimeOnly "com.h2database:h2"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
     runtimeOnly "javax.xml.bind:jaxb-api:2.3.1"
+    runtimeOnly "mysql:mysql-connector-java:8.0.32"
     testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "org.grails:grails-gorm-testing-support"
     testImplementation "org.mockito:mockito-core"
@@ -93,5 +97,22 @@ tasks.withType(GroovyCompile) {
 tasks.withType(Test) {
     useJUnitPlatform()
 }
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'grails-app/migrations'
+        }
+    }
+}
+
+//dbmGormDiff {
+//    if (project.hasProperty('args')) {
+//        args project.args.split(",")
+//    }
+//    doFirst {
+//        dbmGormDiff.systemProperties += System.properties
+//    }
+//}
 
 
