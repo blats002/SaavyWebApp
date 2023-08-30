@@ -98,7 +98,6 @@ hibernate:
         queries: false
         use_second_level_cache: false
         use_query_cache: false
-
 dataSource:
     pooled: true
     jmxExport: true
@@ -137,10 +136,10 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
+#            dbCreate: create-drop
     test:
         dataSource:
-            dbCreate: update
+#            dbCreate: update
     production:
         dataSource:
             dbCreate: none

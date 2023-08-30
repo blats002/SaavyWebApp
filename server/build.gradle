@@ -60,7 +60,7 @@ dependencies {
     implementation "org.grails.plugins:views-json"
     implementation "org.grails.plugins:views-json-templates"
     implementation 'org.grails.plugins:database-migration:4.2.0'
-    implementation 'org.liquibase:liquibase-core:4.19.0'
+    //implementation 'org.liquibase:liquibase-core:4.19.0'
     profile "org.grails.profiles:vue"
     runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
 //    runtimeOnly "com.h2database:h2"
@@ -74,6 +74,14 @@ dependencies {
     testImplementation "org.grails:grails-web-testing-support"
     testImplementation "org.grails:views-json-testing-support"
     testImplementation "org.hibernate.validator:hibernate-validator:6.1.7.Final"
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'grails-app/migrations'
+        }
+    }
 }
 
 bootRun {
@@ -96,14 +104,6 @@ tasks.withType(GroovyCompile) {
 
 tasks.withType(Test) {
     useJUnitPlatform()
-}
-
-sourceSets {
-    main {
-        resources {
-            srcDir 'grails-app/migrations'
-        }
-    }
 }
 
 //dbmGormDiff {
