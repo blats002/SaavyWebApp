@@ -26,4 +26,20 @@ databaseChangeLog = {
             }
         }
     }
+
+    changeSet(author: "Saavy (generated)", id: "1693417719174-1") {
+        dropNotNullConstraint(columnDataType: "varchar(255)", columnName: "col1", tableName: "test")
+    }
+
+    changeSet(author: "Saavy (generated)", id: "1693417719174-2") {
+        dropNotNullConstraint(columnDataType: "varchar(255)", columnName: "col2", tableName: "test")
+    }
+
+    changeSet(author: "Saavy (generated)", id: "1693417719174-3") {
+        dropNotNullConstraint(columnDataType: "datetime", columnName: "date1", tableName: "test")
+    }
+
+    changeSet(author: "Saavy (generated)", id: "1693417719174-4") {
+        dropNotNullConstraint(columnDataType: "datetime", columnName: "date2", tableName: "test")
+    }
 }

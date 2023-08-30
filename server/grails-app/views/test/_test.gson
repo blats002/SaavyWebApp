@@ -1,0 +1,7 @@
+import org.saavy.db.Test
+
+model {
+	Test test
+}
+
+json g.render(test, [resolveTemplate: false])

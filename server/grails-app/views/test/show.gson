@@ -1,0 +1,7 @@
+import org.saavy.db.Test
+
+model {
+	Test test
+}
+
+json tmpl.test(test)

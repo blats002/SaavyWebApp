@@ -34,6 +34,14 @@ configurations {
     }
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDir 'grails-app/migrations'
+        }
+    }
+}
+
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compileOnly "io.micronaut:micronaut-inject-groovy"
@@ -76,14 +84,6 @@ dependencies {
     testImplementation "org.hibernate.validator:hibernate-validator:6.1.7.Final"
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDir 'grails-app/migrations'
-        }
-    }
-}
-
 bootRun {
     ignoreExitValue true
     jvmArgs(
@@ -106,13 +106,10 @@ tasks.withType(Test) {
     useJUnitPlatform()
 }
 
-//dbmGormDiff {
-//    if (project.hasProperty('args')) {
-//        args project.args.split(",")
-//    }
-//    doFirst {
-//        dbmGormDiff.systemProperties += System.properties
-//    }
-//}
+task runGrailsCommand(type: JavaExec) {
+    main = 'org.grails.cli.GrailsCli'
+    classpath = sourceSets.main.runtimeClasspath
+    args project.hasProperty('args') ? project.args.split(" ") : []
+}
 
 
