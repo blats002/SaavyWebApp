@@ -1,11 +1,11 @@
 task copyClientResources(dependsOn: ':client:build', type: Copy) { // <1>
-    group = 'build'
+    group = 'saavy'
     description = 'Copy client resources into server'
     from "${project(':client').projectDir}/dist"
     into "${project(':server').buildDir}/resources/main/public"
 }
 task assembleServerAndClient(type: Copy, dependsOn: ['copyClientResources', ':server:assemble']) { // <2>
-    group = 'build'
+    group = 'saavy'
     description = 'Build combined server & client JAR/WAR'
     from fileTree(dir: "${project(':server').buildDir}/libs/") // <3>
     into "${rootProject.buildDir}"
@@ -13,6 +13,13 @@ task assembleServerAndClient(type: Copy, dependsOn: ['copyClientResources', ':se
         logger.quiet "JAR/WAR generated at ${rootProject.buildDir}. It combines the server and client projects."
     }
 }
+
+task initClient(type: Copy) {
+    group = 'saavy'
+    from zipTree('client.zip') // Specify the path to your ZIP file
+    into '.' // Specify the destination folder
+}
+
 //task(":server:assemble").mustRunAfter(copyClientResources) // <4>
 
 //task dbmGormDiff {

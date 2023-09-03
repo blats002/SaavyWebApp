@@ -1,8 +1,0 @@
-import org.saavy.db.Test
-
-model {
-	Iterable<Test> testList
-}
-
-json tmpl.test(testList ?: [])
-
