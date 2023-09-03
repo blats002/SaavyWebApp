@@ -1,3 +1,9 @@
+task initClient(type: Copy) {
+    group = 'saavy'
+    from zipTree('client.zip') // Specify the path to your ZIP file
+    into '.' // Specify the destination folder
+}
+
 task copyClientResources(dependsOn: ':client:build', type: Copy) { // <1>
     group = 'saavy'
     description = 'Copy client resources into server'
@@ -12,12 +18,6 @@ task assembleServerAndClient(type: Copy, dependsOn: ['copyClientResources', ':se
     doLast {
         logger.quiet "JAR/WAR generated at ${rootProject.buildDir}. It combines the server and client projects."
     }
-}
-
-task initClient(type: Copy) {
-    group = 'saavy'
-    from zipTree('client.zip') // Specify the path to your ZIP file
-    into '.' // Specify the destination folder
 }
 
 //task(":server:assemble").mustRunAfter(copyClientResources) // <4>
