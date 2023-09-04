@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SaavyWebApp:server [runGrailsCommand] GenerateAllControllers" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="SaavyWebApp:server [runGrailsCommand] dbm-gorm-diff" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="-Pargs='generate-all org.saavy.db.Test'" />
+      <option name="scriptParameters" value="-Pargs='dbm-gorm-diff --plain-output'" />
       <option name="taskDescriptions">
         <list />
       </option>

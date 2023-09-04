@@ -68,7 +68,7 @@ dependencies {
     implementation "org.grails.plugins:views-json"
     implementation "org.grails.plugins:views-json-templates"
     implementation 'org.grails.plugins:database-migration:4.2.0'
-    //implementation 'org.liquibase:liquibase-core:4.19.0'
+    implementation 'org.liquibase:liquibase-core:4.19.0'
     profile "org.grails.profiles:vue"
     runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
 //    runtimeOnly "com.h2database:h2"
