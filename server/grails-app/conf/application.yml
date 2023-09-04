@@ -135,12 +135,8 @@ dataSource:
 
 environments:
     development:
-        dataSource:
-#            dbCreate: create-drop
     test:
     production:
-        dataSource:
-            dbCreate: none
 
 #tag::grailsResourcesPattern[]
 grails:
