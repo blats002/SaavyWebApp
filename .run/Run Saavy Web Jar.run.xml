@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Saavy Web Jar" type="JarApplication">
-    <option name="JAR_PATH" value="$PROJECT_DIR$/build/server-0.1.war" />
+    <option name="JAR_PATH" value="$PROJECT_DIR$/build/server-1.0.war" />
     <option name="WORKING_DIRECTORY" value="F:\Workspace\Test\SaavyWebApp" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <method v="2" />
